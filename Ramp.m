@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+n=input('Enter the value for time ');
+a=input('Enter the value for Amplitude ');
+t=0:1:n;
+y=a*t;
+plot(t,y);
+ylabel('Amplitude');
+xlabel('Time');
+title('Ramp Signal');

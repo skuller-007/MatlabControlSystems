@@ -1,0 +1,21 @@
+clc;
+clear all;
+close all;
+V=input('Enter the value for input Voltage ');
+kb=input('Enter the value for back emf constant kb= ');
+kt=input('Enter the value for torque constant kt= ');
+r=input('Enter the value for Resistance R= ');
+b=input('Enter the value for Friction Torque B= ');
+j=input('Enter the value for J= ');
+l=input('Enter the value for inductance L= ');
+num=[V*kt];
+den=[l*j (r*j)+(b*l) (r*b)+(kb*kt) 0];
+sys=tf(num,den)
+subplot (2,1,1);
+impulse(sys);
+title('Electromechanical system impulse response');
+ylabel('angular displacement');
+subplot (2,1,2);
+step(sys);
+title('Electromechanical system step response');
+ylabel('angular displacement');

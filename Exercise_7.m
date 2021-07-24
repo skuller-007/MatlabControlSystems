@@ -1,7 +1,8 @@
+%Lag compesator using bode plot
 clc;
 clear all;
 close all;
-e=5;
+e=5; 
 K=input("Enter the gain of OL system:"); %Gain computed from velocity error constant
 den=[2 1 0]; %Coefficients of denominator polynomial
 G=tf(K,den); %OLTF
@@ -18,4 +19,7 @@ Pc=1/(beta*T) % Pole of the lag compensator
 Gc=tf([1 Zc],[1 Pc]) %TF of lag compensator
 sys=(1/beta)*Gc*G % Multiply by (1/beta) to OLTF of compensated system
 figure;
-margin(sys) %bode plot and GM, PM of compensated sy
+margin(sys) %bode plot and GM, PM of compensated system
+
+
+

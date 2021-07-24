@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+n=input('Enter the value for time ');
+a=input('Enter the value for Amplitude ');
+t=-n:0.005:n;
+y=a*cos(t);
+plot(t,y);
+ylabel('Amplitude');
+xlabel('Time');
+title('Cosine Signal');
